@@ -1,0 +1,41 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+}
+
+.dim {
+  position: absolute;
+  inset: 0;
+  background: var(--color-overlay);
+}
+
+/* A transparent box whose huge shadow darkens everything except the highlighted item. */
+.spotlight {
+  position: fixed;
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 0 0 4px var(--color-primary),
+    0 0 0 100vmax var(--color-overlay);
+  transition: all var(--transition-fast);
+  pointer-events: none;
+}
+
+.card {
+  position: fixed;
+  inset-block-end: var(--space-5);
+  inset-inline: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: var(--modal-width);
+  margin-inline: auto;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-popup);
+}
+
+.title {
+  font-size: var(--fs-xl);
+}

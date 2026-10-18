@@ -1,0 +1,50 @@
+.timeline {
+  position: relative;
+}
+
+.event {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+/* Vertical line linking the dots */
+.event:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  block-size: 100%;
+  inset-inline-start: calc(var(--space-5) / 2 - 1px);
+  width: 2px;
+  background: var(--color-border);
+}
+
+.dot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: var(--space-5);
+  height: var(--space-5);
+  flex-shrink: 0;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  color: var(--color-on-primary);
+  font-size: var(--fs-xs);
+}
+
+.done .dot {
+  border-color: var(--color-success);
+  background: var(--color-success);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
